@@ -23,6 +23,22 @@
             <button id='start' class='startBtn'>Let's Play</button>
         </div>
 
+        <!-- Questions Section, hidden until button is activated -->
+        <div id='game' class='hidden'>
+            <h3 id='questions'></h3>
+            <div id='btns' class='gameBtn'></div>
+        </div>
+
+        <!-- Score Section hidden until Quiz ends -->
+        <div id='end-game' class='hidden'>
+            <p class='score'>Final Score: <span id='final-score'>0</span>
+            </p>
+            <p class='score'>
+                Enter Initials: <input type="text" id='initials' max='3'/>
+            </p>
+        </div>
+
+        <div id='result' class='hidden'></div>
     </div>
 </body>
 </html>
