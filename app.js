@@ -49,6 +49,33 @@ function generate() {
     );
 }
 
-
-
 generate();
+
+// Answer Check Function
+function answerCheck() {
+    if(this.value !== questions[currentQuestionIndex].answer) {
+        time -=15;
+        if (time <= 0) {
+            time = 0;
+        }
+
+        timeContainer.textContent = time;
+        result.textContent = 'Incorrect';
+    }   else {
+        result.textContent = 'Correct';
+    }
+
+    // Hide functions
+    result.classList.remove('hide');
+    setTimeout(function() {
+        result.classList.add('hide');
+    }, 1000)
+    currentQuestionIndex ++;
+    if (currentQuestionIndex === questions.length){
+        endGame();
+    } else {
+        generate();
+    }
+
+}
+
