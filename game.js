@@ -1,26 +1,30 @@
 const question = document.getElementById('question');
+const start = document.getElementById('start');
 const submit = document.getElementById('submit');
-const start = document.getElementById('time');
 const buttons = document.getElementById('btns');
 const time = document.getElementById('time');
 const result = document.getElementById('result');
-
-
+const game = document.getElementById('game');
+const initialsContainer = document.getElementById('initials');
+const finalScore = document.getElementById('final-score');
+const welcome = document.getElementById('welcome');
+const end = document.getElementById('end-game');
 
 let currentQuestionIndex = 0;
 let time = questions.length * 15;
-const timer;
+let timer;
 
 // Start Quiz Function
 function startGame() {
-    home.classList.add('hide');
+    welcome.classList.add('hide');
     game.classList.remove('hide');
+    timeContainer.textContent = time;
+    timer = setInterval(countDown, 1000);
+
+    generate();
 }
 
-// Timer Function
-timeContainer.textContent = time;
 
-timer = setInterval(countDown, 1000);
 
 function countDown() {
     time--;
@@ -44,12 +48,11 @@ function generate() {
             optionNode.setAttribute('value', choice);
             optionNode.textContent = i + 1 + '. ' + choice;
             optionNode.onClick = answerCheck;
-            buttoms.appendChild(optionNode);
+            buttons.appendChild(optionNode);
         }
     );
 }
 
-generate();
 
 // Answer Check Function
 function answerCheck() {
@@ -98,5 +101,16 @@ function saveScore() {
         };
         highScores.push(newScore);
         window.localStorage.setItem('highScores', JSON.stringify(highScores));
+        window.location.href = 'highscore.html'
     }
 }
+
+function enterCheck(event) {
+    if(event.key === 'Enter') {
+        saveScore();
+    }
+}
+
+start.onclick = startGame;
+submit.onclick = saveScore;
+initialsContainer.onkeyup = enterCheck;
