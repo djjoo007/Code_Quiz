@@ -76,6 +76,27 @@ function answerCheck() {
     } else {
         generate();
     }
-
 }
 
+// End Game Function
+function endGame() {
+    clearInterval(timer);
+    end.classList.remove('hide');
+    finalScore.textContent = time;
+    game.classList.add('hide');
+}
+
+// Save High Score Function
+function saveScore() {
+    const initials = initialsContainer.value.trim();
+    if(initials !== "") {
+        const highScores = JSON.parse(window.localStorage.getItem('highScores')) || [];
+
+        const newScore = {
+            initials: initials,
+            score: time
+        };
+        highScores.push(newScore);
+        window.localStorage.setItem('highScores', JSON.stringify(highScores));
+    }
+}
