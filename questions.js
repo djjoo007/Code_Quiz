@@ -1,4 +1,4 @@
-let questions = [
+const questions = [
 {
     question: "Inside which HTML element do we put the JavaScript?",
     choices: ["<script>", "<javascript>", "<js>", "<scripting>"],

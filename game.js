@@ -2,7 +2,7 @@ const question = document.getElementById('question');
 const start = document.getElementById('start');
 const submit = document.getElementById('submit');
 const buttons = document.getElementById('btns');
-const time = document.getElementById('time');
+const timeContainer = document.getElementById('time');
 const result = document.getElementById('result');
 const game = document.getElementById('game');
 const initialsContainer = document.getElementById('initials');
@@ -23,7 +23,6 @@ function startGame() {
 
     generate();
 }
-
 
 
 function countDown() {
@@ -47,7 +46,7 @@ function generate() {
             optionNode.classList.add('choice');
             optionNode.setAttribute('value', choice);
             optionNode.textContent = i + 1 + '. ' + choice;
-            optionNode.onClick = answerCheck;
+            optionNode.onclick = answerCheck;
             buttons.appendChild(optionNode);
         }
     );
