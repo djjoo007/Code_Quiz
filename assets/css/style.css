@@ -3,29 +3,13 @@
     font-size: 70%;
 }
 
-*{
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
+body {
+    font-family: 'PT Sans', sans-serif;
 }
 
 header {
-    padding: 2em;
-    text-align: center;
-}
-h1,
-h2,
-h3,
-h4 {
-    margin-bottom: 1rem;
-}
-
-h1 {
-    font-size: 5.4rem;
-    color: #56a5eb;
-    margin-bottom: 5rem;
+    height: 30px;
+    font-size: 24px;
 }
 
 h1 > span {
@@ -44,101 +28,74 @@ h3 {
     font-weight: 500;
 }
 
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    max-width: 80rem;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
 p {
     font-size: 1.75em;
     margin-bottom: 2em;
 }
 
-.container > * {
-    width: 100%;
-}
-
 a {
     text-decoration: none;
-    color: gray;
+    color: rgb(47, 229, 241);
 }
 
-.play-game {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 14px;
+.scores {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
+.timer {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.text-center {
+.content {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 20px;
     text-align: center;
 }
 
-.hidden {
+hr {
+    border: 2px solid rgba(86, 185, 235, 0.5);
+}
+
+button {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 28px;
+    cursor: pointer;
+}
+
+.startBtn {
+    background-color: #56a5eb;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+/* hides questions until after the start button is pressed */
+.hide {
     display: none;
 }
 
-.btn {
-    font-size: 1.8rem;
-    padding: 1rem 0;
-    width: 20rem;
-    text-align: center;
-    border: 0.1rem solid #56a5eb;
-    margin-bottom: 1rem;
-    text-decoration: none;
-    color: #56a5eb;
-    background-color: white;
+#submit {
+    background-color: #7fb7be;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 6px 16px;
 }
 
-.btn:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-    transform: translateY(-0.1rem);
-    transition: transform 150ms;
+.choice {
+    display: block;
+    background-color: #b8d0eb;
+    padding: 10px 24px;
+    margin: 5px;
+    font-size: 16px;
+    border: 2px;
 }
 
-.btn[disabled]:hover {
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
-}
-
-/* FORMS */
-
-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-input {
-    margin-bottom: 1rem;
-    width: 20rem;
-    padding: 1.5rem;
-    font-size: 1.8rem;
-    border: none;
-    box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
-}
-
-input::placeholder {
-    color: #aaa;
+.winners {
+    display: block;
+    text-align: left;
 }
